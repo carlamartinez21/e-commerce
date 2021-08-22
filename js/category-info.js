@@ -1,4 +1,4 @@
-var category = {};
+var product = {};
 
 function showImagesGallery(array){
 
@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(CATEGORY_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            category = resultObj.data;
+            product = resultObj.data;
 
-            let categoryNameHTML  = document.getElementById("categoryName");
-            let categoryDescriptionHTML = document.getElementById("categoryDescription");
-            let productCountHTML = document.getElementById("productCount");
+            let productNameHTML  = document.getProductById("productName");
+            let productDescriptionHTML = document.getProductById("productDescription");
+            let productCountHTML = document.getProductById("productCount");
             let productCriteriaHTML = document.getElementById("productCriteria");
         
-            categoryNameHTML.innerHTML = category.name;
-            categoryDescriptionHTML.innerHTML = category.description;
+            productNameHTML.innerHTML = product.name;
+            productDescriptionHTML.innerHTML = product.description;
             productCountHTML.innerHTML = category.productCount;
             productCriteriaHTML.innerHTML = category.productCriteria;
 
