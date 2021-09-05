@@ -2,6 +2,7 @@ function validar(){
     let nombre = document.getElementById("nombre").value;
     let pass = document.getElementById("pass").value;
     if ((nombre !=="")&&(pass !=="")){
+        setUser();
         window.location.href="home.html";
     }
     else{
@@ -10,3 +11,9 @@ function validar(){
 }
 
 //document.addEventListener("DOMContentLoad")
+
+// Guarda en nombre del usuario
+function setUser(){
+  let nombre = document.getElementById("nombre").value;
+  localStorage.setItem("user",nombre);
+}
